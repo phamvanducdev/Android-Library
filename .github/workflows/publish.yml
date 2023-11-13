@@ -1,4 +1,4 @@
-name: Publish to GithubPackages
+name: Publish to Github Packages
 
 on:
   push:
@@ -20,10 +20,10 @@ jobs:
           java-version: 17
       - name: Get the tag version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-      - name: Publish to GitHub Packages Apache Maven
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
+      - name: Publish to GitHub Packages
         env:
-          GITHUB_PACKAGE_USERNAME: ${{ secrets.USERNAME }}
-          GITHUB_PACKAGE_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_PACKAGE_USERNAME: ${{ secrets.NPM_USERNAME }}
+          GITHUB_PACKAGE_TOKEN: ${{ secrets.NPM_TOKEN }}
           GRADLE_PUBLISH_VERSION: ${{ steps.get_version.outputs.VERSION }}
         run: ./gradlew assembleRelease publish
