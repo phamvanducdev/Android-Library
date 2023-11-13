@@ -64,7 +64,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "phamvanducdev"
             artifactId = "android-library"
-            version = "1.0.1"
+            version = "1.0.2"
         }
     }
     repositories {
