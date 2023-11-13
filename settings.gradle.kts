@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AndroidLibrary"
+rootProject.name = "Android Library"
 include(":app")
 include(":library")

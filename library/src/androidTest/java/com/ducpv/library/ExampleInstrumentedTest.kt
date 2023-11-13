@@ -1,4 +1,4 @@
-package com.ducpv.android
+package com.ducpv.library
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ducpv.android", appContext.packageName)
+        assertEquals("com.ducpv.library.test", appContext.packageName)
     }
 }

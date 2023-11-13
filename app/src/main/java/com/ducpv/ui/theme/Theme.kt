@@ -1,4 +1,4 @@
-package com.ducpv.android.ui.theme
+package com.ducpv.ui.theme
 
 import android.app.Activity
 import android.os.Build

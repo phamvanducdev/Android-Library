@@ -1,4 +1,4 @@
-package com.ducpv.android.library
+package com.ducpv.library
 
 import org.junit.Test
 

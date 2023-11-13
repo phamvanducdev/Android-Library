@@ -1,4 +1,4 @@
-package com.ducpv.android.library.utils
+package com.ducpv.utils
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -17,6 +17,7 @@ import java.util.Date
 /**
  * Created by pvduc9773 on 10/11/2023.
  */
+
 @SuppressLint("SimpleDateFormat")
 @Throws(IOException::class)
 private fun Activity.createImageFile(): File {
@@ -46,11 +47,7 @@ fun Activity.dispatchTakePictureIntent(requestCode: Int = 313, photoFileCallback
             // Continue only if the File was successfully created
             photoFile?.also {
                 photoFileCallback(it)
-                val photoURI: Uri = FileProvider.getUriForFile(
-                    this,
-                    packageName,
-                    it
-                )
+                val photoURI: Uri = FileProvider.getUriForFile(this, packageName, it)
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                 startActivityForResult(takePictureIntent, requestCode)
             }
